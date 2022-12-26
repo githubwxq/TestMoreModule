@@ -36,8 +36,8 @@ dependencies {
     testImplementation 'junit:junit:4.13.2'
 
 //    implementation project(path: ':libraryone')
-    implementation project(path: ':librarytwo')
-    implementation project(path: ':librarythree')
+`//    implementation project(path: ':librarytwo')
+//    implementation project(path: ':librarythree')
 
     implementation 'com.github.githubwxq:TestMoreModule:1.0.0'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
