@@ -1,5 +1,6 @@
 plugins {
     id 'com.android.library'
+    id 'maven-publish'   //添加maven publish插件
 }
 
 android {
@@ -23,6 +24,19 @@ android {
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.release
+                groupId = 'com.example.libraryone' //groupId 随便取
+                artifactId = 'libraryone'  //test随便取
+                version = '1.0.1'
+            }
+        }
     }
 }
 
