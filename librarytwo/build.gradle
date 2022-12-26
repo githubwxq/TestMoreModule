@@ -1,5 +1,6 @@
 plugins {
     id 'com.android.library'
+    id 'maven-publish'   //添加maven publish插件
 }
 
 android {
@@ -25,7 +26,18 @@ android {
         targetCompatibility JavaVersion.VERSION_11
     }
 }
-
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.release
+                groupId = 'com.example.librarytwo' //groupId 随便取
+                artifactId = 'librarytwo'  //test随便取
+                version = '1.0.1'
+            }
+        }
+    }
+}
 dependencies {
 
     implementation 'androidx.appcompat:appcompat:1.5.1'
